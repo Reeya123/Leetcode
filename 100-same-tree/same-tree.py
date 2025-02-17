@@ -4,11 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        stack = [(p,q)]
-        while stack: #continue until stack is empty 
-            p, q = stack.pop()
+        queue = deque([(p,q)])
+        while queue: #continue until queue is empty 
+            p, q = queue.popleft()
             
             '''
             3 cases:
@@ -31,8 +32,8 @@ class Solution:
                 return False 
             
             # Push left and right children to stack for further comparison
-            stack.append((p.left, q.left))
-            stack.append((p.right, q.right))
+            queue.append((p.left, q.left))
+            queue.append((p.right, q.right))
             
         # If the loop completes without returning False, the trees are same    
         return True
