@@ -10,6 +10,13 @@ class Solution:
         total_depth = 0 
         while stack:
             node , depth = stack.pop()
+            '''
+            the reason why this is needed is because stack might append None nodes too
+            The stack initially starts with (root, 1), which means it contains a valid node.
+However, as the algorithm progresses, it pushes node.left and node.right into the stack.
+If a node doesn’t have a left or right child, it still pushes (None, depth + 1).
+Later, when stack.pop() retrieves (None, depth), None does not have children, causing an error when accessing node.right or node.left.
+            '''
             if node:
                 #process each node and add the depth 
                 total_depth = max(total_depth, depth)
