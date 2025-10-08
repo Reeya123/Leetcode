@@ -43,4 +43,6 @@ Throughout the build, I made decisions with the non-technical user in mind. GTM 
 
 This app is best viewed as a working prototype — a slice of how Sumble might help GTM teams extract clarity from messy public data. I wanted to balance technical execution with empathy for the end user.
 
-Thanks for taking the time to review it.
+Thanks for taking the time to review it
+
+##new chang made by Rashi
