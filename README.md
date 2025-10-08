@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Apple Org Structure – Sumble Take-Home
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project visualizes Apple’s internal org structure as inferred from job postings. The raw data included unstructured group and team names extracted from thousands of listings. My goal was to present this messy data in a clean, usable way — especially for non-technical GTM (go-to-market) users who rely on organizational clarity to prioritize outreach and plan strategy.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+I built a React + Tailwind web app that lets users explore Apple’s org hierarchy interactively. The app supports search, team exploration, and high-level insights through visual charts. Rather than just rendering raw data, I focused on designing a UI that would feel approachable and familiar to a sales or strategy user — someone who may not be technical, but needs to quickly find and understand how Apple structures its teams.
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Searchable org structure:** Users can search by team or group name. Search filters results in real time and highlights both direct and partial matches.
+- **Expandable hierarchy:** Each org group can be expanded to reveal its internal teams. This makes exploration feel lightweight instead of overwhelming.
+- **Data cleaning:** Team and group names were inconsistent in the raw JSON, so I normalized them for clarity and consistency.
+- **Visual insights:** I added a bar chart and donut chart to help users quickly spot the most active groups and understand team distribution at a glance.
+- **Dashboard-style layout:** The design borrows patterns from modern SaaS admin tools to make the app feel familiar to GTM audiences. Everything is responsive and optimized for readability.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- React (with functional components and hooks)
+- Tailwind CSS for layout and styling
+- Chart.js via react-chartjs-2 for data visualization
+- Manual data preprocessing in JavaScript (mocked `mentionCount` for visual insights)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Design Considerations
 
-### `npm run build`
+Throughout the build, I made decisions with the non-technical user in mind. GTM teams aren’t looking for raw JSON structures — they need signals, clarity, and visual hierarchy. That’s why I prioritized searchable content, group/team expansion, and dashboard-style summaries over dense data tables or nested schemas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## If I Had More Time
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- I’d connect real mention frequencies (based on job post co-occurrence) rather than mocking them
+- I’d add filters by role types, recency of postings, or location
+- I’d explore highlighting “newly emerging” teams or org shifts over time
+- I’d clean up overlapping/duplicate team names using fuzzy clustering or NLP-based deduplication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Running the App
 
-### `npm run eject`
+1. Clone the repo
+2. Run `npm install`
+3. Start the server with `npm start`
+4. Visit `localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Submission Notes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This app is best viewed as a working prototype — a slice of how Sumble might help GTM teams extract clarity from messy public data. I wanted to balance technical execution with empathy for the end user.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thanks for taking the time to review it.
